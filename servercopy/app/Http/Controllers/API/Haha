@@ -1,0 +1,68 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Article;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+
+class ArticleController extends Controller
+{
+    public function index() {
+        return Article::all();
+    }
+
+    public function create() {
+        return view('articles.create');
+    }
+    public function destroy(Article $article) {
+        $article->delete();
+        return response()->json(null, 204);
+    }
+    public function edit(Article $article) {
+        return view('articles.edit', compact('article'));
+    }
+    public function update(Request $request, Article $article) {
+        if ($article->user_id !== auth()->user()->id) {
+            return response()->json('Unathorized', 401);
+        }
+        $data = request()->validate([
+            'topic' => 'required',
+            'image' => 'required|active_url',
+            'description' => 'required',
+            'body' => 'required'
+        ]);
+        $article->update($data);
+        return response()->json($article, 200);
+    }
+    public function store(Request $request) {
+        $data = request()->validate([
+            'user_id' => 'required',
+            'topic' => 'required',
+            'image' => 'required|active_url',
+            'description' => 'required',
+            'body' => 'required'
+        ]);
+   /*     $validator = \Validator::make($request->all(), [
+            'user_id' => 'required',
+            'topic' => 'required',
+            'image' => 'required|active_url',
+            'description' => 'required',
+            'body' => 'required'
+        ]); */
+
+    /*    if ($validator->fails()) {
+           return response()->json($validator->errors(), 422);
+        } */
+        $article = Article::create($data);
+        return response()->json($article, 201);
+    }
+
+    public function show(Article $article) {
+        return $article;
+    }
+    public function author($id) {
+        $articles = Article::where('user_id', $id)->get();
+        return response()->json($articles, 201);
+    }
+}
