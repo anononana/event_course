@@ -84,6 +84,6 @@ class Event extends Model
         usort($array,function($first,$second){
             return $first['total'] < $second['total'];
         });
-       return $groups;
+       return $array ;
     }
 }

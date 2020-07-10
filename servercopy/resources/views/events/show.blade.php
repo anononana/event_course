@@ -361,8 +361,8 @@
                             <tr>
 
                                 <th scope="row">{{$key + 1}}.</th>
-                                <td>Группа: {{$group->name}}</td>
-                                <td>Кол-во баллов: {{$group->total}}</td>
+                                <td>Группа: {{$group['name']}}</td>
+                                <td>Кол-во баллов: {{$group['total']}}</td>
 
                             </tr>
                             @endforeach

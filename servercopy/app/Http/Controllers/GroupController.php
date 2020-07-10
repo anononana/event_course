@@ -12,6 +12,10 @@ use Illuminate\Validation\Rule;
 
 class GroupController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function store(Event $event) {
         $data = request()->validate([
             'name' => 'required',

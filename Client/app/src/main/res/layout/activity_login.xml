@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity"
+    android:background="@drawable/background"
+    >
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_launcher_foreground"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/sign"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+
+    <LinearLayout
+        android:id="@+id/sign"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@drawable/login_bg"
+        android:padding="15dp"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SING UP"
+            android:textAlignment="center"
+            android:textColor="#000"
+            android:textSize="28sp"
+            android:layout_marginBottom="15dp"
+            />
+        <EditText
+            android:id="@+id/logEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:layout_marginBottom="15dp"
+            />
+        <EditText
+            android:id="@+id/logPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Password"
+            android:inputType="textPassword"
+            />
+        <TextView
+            android:id="@+id/err"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textAlignment="center"
+            android:textColor="#000"
+            android:textSize="14sp"
+            android:layout_marginBottom="15dp"
+            />
+        <Button
+            android:id="@+id/log_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sign Up"
+            android:background="@drawable/btn_bg"
+            android:textColor="#fff"
+            android:textSize="22sp"
+            android:layout_marginBottom="15dp"
+            />
+        <TextView
+            android:id="@+id/redirectToReg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Регистрация"
+            android:textAlignment="center"
+            android:textColor="#000"
+            android:textSize="14sp"
+            android:layout_marginBottom="15dp"
+            />
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -10,6 +10,10 @@ use Illuminate\Http\Request;
 
 class ResultController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function store(Task $task) {
         $data = request()->validate([
             'answer' => 'required',

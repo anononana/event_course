@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProfileActivity"
+    android:background="@drawable/background"
+    >
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/NSV"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_marginTop="?attr/actionBarSize"
+        android:id="@+id/sign"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@id/NSV"
+        android:background="@drawable/login_bg"
+        android:padding="15dp"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Личный профиль"
+            android:textAlignment="center"
+            android:textColor="#000"
+            android:textSize="28sp"
+            android:layout_marginBottom="15dp"
+            />
+        <ImageView
+            android:id="@+id/imageV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_launcher_background"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/NSV"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            />
+        <TextView
+            android:id="@+id/profileName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Имя"
+            android:textColor="#000"
+            android:textSize="14sp"
+            android:layout_marginBottom="15dp"
+            />
+
+        <TextView
+            android:id="@+id/profileSurname"
+            android:layout_width="379dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:text="Фамилия"
+            android:textColor="#000"
+            android:textSize="14sp" />
+
+
+        <TextView
+            android:id="@+id/Pdescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Описание"
+            android:textAlignment="center"
+            android:textColor="#000"
+            android:textSize="14sp"
+            android:layout_marginBottom="15dp"
+            />
+
+    </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</RelativeLayout>

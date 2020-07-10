@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">EventsAct</string>
+    <string name="err_req">Поле обязательно к заполнению.</string>
+    <string name="err_email">The email должен быть действительным.</string>
+    <string name="err_password">Пароль должен содержать хотя бы 6 символов.</string>
+    <string name="success">Вы успешно зарегистрировались.</string>
+    <string name="successLog">Вы успешно вошли.</string>
+    <string name="eventTitle" />"
+
+</resources>

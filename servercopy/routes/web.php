@@ -14,7 +14,6 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/events', 'EventController@index');
 Auth::routes();
 Route::middleware('auth')->group(function() {
     Route::get('/events/create','EventController@create');
@@ -25,6 +24,7 @@ Route::middleware('auth')->group(function() {
     Route::patch('/events/{event}/finish', 'EventController@finish');
     Route::post('/events/{event}/attachExpert', 'EventController@storeExpert');
 });
+Route::get('/events', 'EventController@index');
 
 Route::get('/events/{event}','EventController@show');
 
